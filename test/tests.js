@@ -32,5 +32,16 @@ describe('all module tests', () => {
       assert(h1_dom.textContent.trim().match(/Hello,\s?Pluralsight!/) , 'contents aren\'t exactly "Hello, Pluralsight!"');
     });
 
+    it('In body, a ul exists with 2 li elements @ul-exists-and-has-2-lis', () =>  {
+      let ul_dom  = dom.window.document.querySelector('body > ul');
+      let lis_dom  = dom.window.document.querySelectorAll('body > ul > li');
+
+      assert(ul_dom !== null, 'there is no ul in body');
+      assert(lis_dom && lis_dom.length >= 2, 'there aren\'t at least 2 lis');
+      assert(lis_dom[0].textContent.trim().length > 0 &&
+             lis_dom[1].textContent.trim().length > 0 
+              , 'at least one of lis does not have some non-ws content');
+    });
+
   });
 });
