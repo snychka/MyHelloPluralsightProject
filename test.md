@@ -1,2 +1,0 @@
-# MyHelloPluralsightProject
-testing Project creation
