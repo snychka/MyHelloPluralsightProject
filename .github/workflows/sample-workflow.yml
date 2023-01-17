@@ -1,0 +1,14 @@
+name: sample-workflow
+on: [push]
+jobs:
+  explore-first-github-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "job running on ${{ runner.os }}"
+      - name : check out repo code
+        uses: actions/checkout@v2
+      - run: echo "repo ${{ github.repository }} cloned."
+      - name : check out repo code
+        run: |
+          ls ${{ github.workspace }}
